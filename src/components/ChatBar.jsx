@@ -54,10 +54,10 @@ const ChatBar = ({ chatList, setChatList }) => {
   };
 
   return (
-    <div className="h-24">
+    <div className="h-24 absolute bottom-0 w-full">
       <form className="h-full flex items-center px-4" onSubmit={onSubmitChat}>
         <input
-          className={`    grow py-1 px-2 focus:outline-none shadow-md border-2 focus:border-black-400 mr-4 ${
+          className={`grow py-1 px-2 focus:outline-none border-2 focus:border-black shadow-lg  mr-4 ${
             isLoading && "bg-gray-100 text-gray-500"
           }`}
           type="text"
@@ -67,14 +67,14 @@ const ChatBar = ({ chatList, setChatList }) => {
           placeholder="무엇이든 물어보세요. Chat-GPT"
         />
         <button
-          className="w-10 py-[6px] text-sm bg-gray-400 hover:bg-black active:bg-gray-400 rounded-lg text-white font-semibold flex justify-center"
+          className="w-28 py-[6px] text-sm bg-gray-400 hover:bg-black active:bg-gray-400 rounded-lg text-white font-semibold flex justify-center"
           type="submit"
           disabled={isLoading}
         >
           {isLoading ? (
             <CgSpinner className="animate-spin-slow" size={22} />
           ) : (
-            "검 색 "
+            "검 색"
           )}
         </button>
       </form>
